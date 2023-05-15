@@ -1,0 +1,30 @@
+<form class="movie-form">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" class="form-control" required [(ngModel)]="movie.title" />
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" class="form-control" [(ngModel)]="movie.description" ></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="image-url">Image URL</label>
+        <input type="url" id="image-url" name="image-url" class="form-control" [(ngModel)]="movie.image" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="movie.title == ''" (click)="isEditing ? editMovie() : submitMovie()">Submit</button>
+</form>
+
+<div class="preview">
+    <h3 class="preview-title">Preview:</h3>
+    <div class="movie-container">
+        <img [src]="movie.image == '' ? '../../../assets/noimage.jpg' :  movie.image " alt="Image" class="movie-img">
+        <div class="movie-info-container">
+            <h3 class="movie-title">{{movie.title == '' ? 'Write your title': movie.title}}</h3>
+            <p class="movie-description">{{movie.description == '' ? 'Write your description': movie.description}}</p>
+        </div>
+    </div>
+
+</div>

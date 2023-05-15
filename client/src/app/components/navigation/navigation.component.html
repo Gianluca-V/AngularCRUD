@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <h1 class="title"><a routerLink="/">ANGULAR CRUD</a></h1>
+    <div class="links-container">
+        <a routerLink="/movies" class="list-link" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+            <li class="list-link-li">List</li>
+        </a>
+        <a routerLink="/movies/add" class="form-link" routerLinkActive="active-link">
+            <li class="form-link-li">Add</li>
+        </a>
+    </div>
+    
+    
+</nav>
+<!-- <div class="searchbar-container">
+        <input type="search" name="search" id="search-input" class="search-input">
+        <button class="search-input-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div> -->
